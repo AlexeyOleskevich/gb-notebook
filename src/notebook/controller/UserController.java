@@ -36,4 +36,8 @@ public class UserController {
     public List<User> getAllUsers() {
         return repository.findAll();
     }
+
+    public void deleteUserById(Long id) {
+        repository.delete(id);
+    }
 }

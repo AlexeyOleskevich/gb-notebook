@@ -35,11 +35,19 @@ public class UserView {
                         throw new RuntimeException(e);
                     }
                     break;
-                case UPDATE:
+                case UPDATE: {
                     String userId = prompt("Enter user id: ");
                     userController.updateUser(userId, createUser());
+                    break;
+                }
+
                 case LIST:
                     System.out.println(userController.getAllUsers());
+                    break;
+                case DELETE: {
+                    String userId = prompt("Enter user id: ");
+                    userController.deleteUserById(Long.parseLong(userId));
+                }
 
             }
         }
